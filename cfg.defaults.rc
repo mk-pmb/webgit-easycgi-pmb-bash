@@ -1,0 +1,57 @@
+# -*- coding: utf-8, tab-width: 2 -*-
+DF_CFG=(
+
+
+[share_sh_path]=''
+#
+# The path to share.sh, as seen from the stub's perspective.
+# This setting is here for documentation only.
+# It must be configured in the stub file anyway (see install instructions),
+# else the stub fails before this default config can even be loaded.
+
+
+[repo_name_rgx]='[A-Za-z0-9_-]+'
+#
+# A regular expression matching acceptable repository directory names.
+# It's syntax must be one that the server's bash shell understands.
+
+
+[branch_grep_rgx]='master|webgit-\S*'
+#
+# A grep regexp to match branch names that shall be announced.
+# Beware that the web audience might be able to discover branches by other
+# means. Refer to README.md for security information.
+# Please ensure it does not match whitespace at the beginning of lines,
+# else things will probably break.
+
+
+[branch_grep_opt]='--perl-regexp --line-regexp'
+#
+# Advanced grep options for branch name selection.
+# The defaults select perl style als the regexp syntax
+# and require that the regexp matches the entire branch name.
+
+
+[fake_head]='master'
+#
+# When your audience uses `git clone` without the `--branch=…` option,
+# git will ask for the HEAD file to determine what the current branch is,
+# and will try to clone that. In order to not disclose your real HEAD
+# selection, the value configured here will be resolved to a commit,
+# and that commit's SHA-1 will be claimed as HEAD.
+
+
+[eol]=''
+#
+# Some servers that don't implement the CGI spec correctly may
+# require a 0x0D carriage return character at the end of each header line.
+# If you're afflicted by this, set this to `CRLF`.
+
+
+
+
+
+
+
+
+)
