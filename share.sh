@@ -99,7 +99,8 @@ function wg_load_config () {
 
 
 function wg_repo_hello () {
-  local URL="${REQUEST_SCHEME:-http}://$HTTP_HOST$REQUEST_URI"
+  local ORIGIN="${REQUEST_SCHEME:-http}://$HTTP_HOST"
+  local URL="$ORIGIN$REQUEST_URI"
   local SUSP="${URL//[A-Za-z0-9_\/.:-]/}"
   [ -z "$SUSP" ] || URL="$("$SELFPATH"/aposquote.sed <<<"$URL")"
 
@@ -109,11 +110,19 @@ function wg_repo_hello () {
   Would you like to clone this repository?
   The command would be${SUSP:+ (but heed the warning below)}:
 
-  git clone -- $URL"
+      git clone --config http.followRedirects=true -- $URL"
   [ -z "$SUSP" ] || echo "
   However, the URL contains characters that could maybe have
   special effects in some shells. The quotes shown should work in
   Almquist-like shells, but please double-check for your shell."
+  echo "
+  If you'd like to permanently allow redirects for this host,
+  you can set it in your user account's git config with:
+
+      git config --global $(
+        "$SELFPATH"/aposquote.sed <<<"http.$ORIGIN.followRedirects"
+        ) true
+  "
 }
 
 
