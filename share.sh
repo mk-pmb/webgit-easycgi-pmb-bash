@@ -122,6 +122,9 @@ function wg_repo_hello () {
       git config --global $(
         "$SELFPATH"/aposquote.sed <<<"http.$ORIGIN.followRedirects"
         ) true
+
+  (The option is always called 'http.protocol://host', even when
+  the 'protocol' part is 'https'.)
   "
 }
 
