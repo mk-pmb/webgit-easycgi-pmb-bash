@@ -1,5 +1,5 @@
 { "name": "webgit-easycgi-pmb",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CGI to easily webserve only committed objects and selected branches of git repositories.",
   "keywords": [
     "git",
@@ -8,13 +8,13 @@
   ],
 
   "author": "M.K. (https://github.com/mk-pmb)",
-  "homepage": "https://github.com/mk-pmb/webgit-easycgi-pmb-js/#readme",
+  "homepage": "https://github.com/mk-pmb/webgit-easycgi-pmb-bash/#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mk-pmb/webgit-easycgi-pmb-js.git"
+    "url": "git+https://github.com/mk-pmb/webgit-easycgi-pmb-bash.git"
   },
   "bugs": {
-    "url": "https://github.com/mk-pmb/webgit-easycgi-pmb-js/issues"
+    "url": "https://github.com/mk-pmb/webgit-easycgi-pmb-bash/issues"
   },
   "contributors": [],
 
