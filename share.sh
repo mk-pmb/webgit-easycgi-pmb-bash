@@ -99,13 +99,21 @@ function wg_load_config () {
 
 
 function wg_repo_hello () {
-  wg_header 200 OK '' '
+  local URL="${REQUEST_SCHEME:-http}://$HTTP_HOST$REQUEST_URI"
+  local SUSP="${URL//[A-Za-z0-9_\/.:-]/}"
+  [ -z "$SUSP" ] || URL="$("$SELFPATH"/aposquote.sed <<<"$URL")"
+
+  wg_header 200 OK '' "
   Hello. :-)
 
   Would you like to clone this repository?
-  The command would be:
+  The command would be${SUSP:+ (but heed the warning below)}:
 
-  '"git clone -- ${REQUEST_SCHEME:-http}://$HTTP_HOST$REQUEST_URI"
+  git clone -- $URL"
+  [ -z "$SUSP" ] || echo "
+  However, the URL contains characters that could maybe have
+  special effects in some shells. The quotes shown should work in
+  Almquist-like shells, but please double-check for your shell."
 }
 
 

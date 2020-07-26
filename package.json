@@ -1,5 +1,5 @@
 { "name": "webgit-easycgi-pmb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CGI to easily webserve only committed objects and selected branches of git repositories.",
   "keywords": [
     "git",
