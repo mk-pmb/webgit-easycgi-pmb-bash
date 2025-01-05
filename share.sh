@@ -34,7 +34,7 @@ function wg_cgi () {
   # /repo-name/objects/info/packs
   # /repo-name/objects/pack/pack-hexhex.idx
   # /repo-name/objects/pack/pack-hexhex.pack
-  # /repo-name/objects/65/hexhex
+  # /repo-name/objects/hex/hexhex
 
   [ -d "$REPO_NAME"/../refs/heads ] \
     || wg_fail 404 'Not Found' 'Repository does not exist or has no heads.'
