@@ -46,7 +46,7 @@ Install
 1.  Clone this repo somewhere. For this tutorial, we'll assume you cloned it
     to `/home/bernd/webdev/webgitcgi`.
 1.  In your webspace's CGI directory, create some subdirectory for your
-    repos. For this guide we'll assume it's `/var/www/cgi-bin/gits`.
+    repos. For this guide we'll assume it's `/var/www/cgi-bin/repos`.
 1.  Copy `stub.sh` from this repo into `/var/www/cgi-bin/repos/` as any
     filename you like and your webmaster allows; for this tutorial,
     we'll name the remote copy `gits.sh`.
